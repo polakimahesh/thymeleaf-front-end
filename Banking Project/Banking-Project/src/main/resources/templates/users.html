@@ -1,0 +1,65 @@
+
+        <!-- list of users -->
+<div  class="col d-flex flex-column background-users" align="center">
+<div class="alert alert-primary shadow-lg p-3 m-5  rounded m-2 heading" role="alert">
+    <h3 class="heading">Users List</h3>
+</div>
+    <div> <a th:href="@{/register-user}" class="btn btn-outline-dark btn-rounded m-3" >Add Merchant</a></div>
+    <table id="user-table"  style="width:80%" border="3"
+           class="table table-striped table-responsive-md m-5 shadow-lg">
+        <thead>
+        <tr class="table-warning">
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile NO</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th class="text-center">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-success" th:each="user:${alluserlist}">
+            <td th:text="${user.id}"></td>
+            <td  th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.mobileNo}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.dateOfBirth}"></td>
+            <td class="text-center">
+                <a th:href="@{/users/{id}(id=${user.id})}"> <button type="button" class="btn btn-outline-info">click here</button></a>
+                <a th:href="@{/register-user/{id}(id=${user.id})}"> <button type="button" class="btn btn-outline-success ml-2">Edit</button></a>
+                <a th:href="@{/delete/{id}(id=${user.id})}"> <button type="button" class="btn btn-outline-danger">delete</button></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-3  d-none d-lg-block">
+                <img class="m-5" src="https://miro.medium.com/v2/resize:fit:1280/1*oORC3uWwJqookcdfEbeWDA.jpeg" width="100%" height="80%">
+            </div>
+            <div class="col-3 m-3  d-none d-lg-block">
+                <img class="m-5" width="100%" height="80%" src="https://www.digitaltechupdates.com/wp-content/uploads/2020/01/5-Tips-to-Improve-Your-Online-Store%E2%80%99s-Product-Images.png">
+            </div>
+            <div class="col-3 m-3  d-none d-lg-block">
+                <img class="m-5" width="100%" height="80%" src="https://www.perfecto.io/sites/perfecto/files/styles/teaser_image/public/image/2019-06/image-blog-perfecto-addressing-user-flows-mobile-automation-testing.png?itok=YApqxR4j">
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+        <script>
+			$(document).ready(function() {
+				$("#user-table").DataTable({
+						'aoColumnDefs': [{
+        				'bSortable': false,
+        				'aTargets': [-1] /* 1st one, start by the right */
+    				}]
+				});
+			})
+		</script>

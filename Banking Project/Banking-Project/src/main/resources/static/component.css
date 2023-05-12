@@ -1,0 +1,24 @@
+.bg-coloring{
+background-color: #8533ff;
+}
+.icon-style{
+color:white;
+}
+.navbar-coloring{
+background-color:  #000033;
+}
+.icon-text{
+font-size: 16px;
+color:white;
+}
+.icons{
+color: #c3c3c4;
+}
+.menu-hover:hover:active
+{
+background-color:#9966FF;
+background-size:cover;
+width:100%;
+}
+
+

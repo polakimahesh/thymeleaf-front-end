@@ -1,0 +1,17 @@
+.heading{
+position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0%   { left:0px; top:0px;}
+  25%  { left:100px; top:0px;}
+
+  100% { left:-100px; top:0px;}
+}
+.cards{
+background: rgb(206,206,245);
+background: linear-gradient(90deg, rgba(206,206,245,1) 37%, rgba(167,196,199,1) 60%);
+color:black;
+}
